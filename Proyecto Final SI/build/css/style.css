@@ -31,6 +31,25 @@
     color: white;
 }
 
+.boton_2 {
+    background-color: var(--color_fondo);
+    border: 2px solid var(--color_fondo);
+    color: var(--color_1);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.boton_2:hover {
+    background-color: var(--color_1);
+    color: var(--color_fondo);
+}
+
 /*Header*/
 
 .header {
@@ -151,6 +170,7 @@
     padding: 0 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .contactos .tabla{
@@ -165,6 +185,75 @@
     width: 60px;
     height: 60px;
 }
+
+.contactos h2{
+    text-align: center;
+}
+
+/*Formulario*/
+
+.contactos .formulario {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contactos .formulario fieldset{
+    margin: 10px 0;
+}
+
+.contactos .formulario legend{
+    font-size: 18px;
+    color: var(--color_2);
+}
+
+.contactos .formulario label{
+    display: block;
+    padding: 0 0 5px 0;
+}
+
+.contactos .formulario input:not([type="submit"]){
+    padding: 5px;
+    display: block;
+    width: 97%;
+    background-color: var(--color_1);
+    border: 1px solid var(--color_fondo);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contactos .formulario .op{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.contactos .formulario .op img{
+    width: 156px;
+    height: 156px;
+}
+
+.formulario_boton {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px 0 0 0;
+}
+
+.formulario_boton button{
+    width: 100px;
+    height: 40px;
+    padding: 0;
+    display: block;
+}
+
+.formulario_boton button p{
+    margin: 0;
+}
+
 
 /*Footer*/
 footer {
