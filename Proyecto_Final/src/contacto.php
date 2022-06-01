@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Datos de contacto</title>
-        <link rel="stylesheet" href="../build/css/style.css">
-        <link rel="stylesheet" href="../build/css/normalize.css">
-        <link rel="icon" href="../build/img/logo.svg">
-        <script src="https://kit.fontawesome.com/916f6b891e.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <header class="header">
-            <div class="contenedor contenido-header">
-                <div class="barra">
-                    <div class="logotipo">
-                        <a href="index.html">                        
-                            <img src="../build/img/logo.svg" alt="Logotipo">
-                            <h1>Agenda</h1>
-                        </a>
-                    </div>
-                    <div class="buscador">
-                        <div class="buscador-box">
-                            <span class="icon"><i class="fa fa-search fa-lg"></i></span>
-                            <input type="Buscar" placeholder="Buscar..." id="Buscar">
-                            <span class="icon"><i class="fas fa-times"></i></span>
-                        </div>
-                    </div>
-                </div> <!-- Barra-->
-            </div> <!--Contenido-->
-        </header>
+<?php include '../includes/templates/header.php'; ?>
 
         <main class="contenedor seccion">
             <div class="contenido-main">
