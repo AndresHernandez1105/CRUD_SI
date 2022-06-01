@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Datos de contacto</title>
+        <link rel="stylesheet" href="../build/css/style.css">
+        <link rel="stylesheet" href="../build/css/normalize.css">
+        <link rel="icon" href="../build/img/logo.svg">
+        <script src="https://kit.fontawesome.com/916f6b891e.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="contenedor contenido-header">
+                <div class="barra">
+                    <div class="logotipo">
+                        <a href="/">                        
+                            <img src="../build/img/logo.svg" alt="Logotipo">
+                            <h1>Agenda</h1>
+                        </a>
+                    </div>
+                    <div class="buscador">
+                        <div class="buscador-box">
+                            <span class="icon"><i class="fa fa-search fa-lg"></i></span>
+                            <input type="Buscar" placeholder="Buscar..." id="Buscar">
+                            <span class="icon"><i class="fas fa-times"></i></span>
+                        </div>
+                    </div>
+                </div> <!-- Barra-->
+            </div> <!--Contenido-->
+        </header>
+
+        <main class="contenedor seccion">
+            <div class="contenido-main">
+                <div class="navegacion">
+                    <a class="boton"><i class="fas fa-plus fa-lg"></i> <p>Crear Contacto</p></a>
+                    <div class="nav">
+                        <div class="actualizar">
+                            <span><i class="fa-solid fa-address-book"></i></span>                           
+                            <p>Contactos: 2</p>
+                        </div>
+                        <div class="actualizar">
+                            <span><i class="fa-solid fa-rotate-right"></i></span>
+                            <p>Actualizar</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="info">
+                        <p>Proyecto Sistemas de Información</p>
+                        <p>Grupo: 2859(2022-II)</p>
+                        <p>Equipo: Andrés Hernández, Carlos Gutiérrez</p>
+                    </div>
+                </div> <!--Navegación-->
+
+                <div class="contactos">
+                    <table class="tabla">
+                        <tr>
+                            <td></td>
+                            <th scope="row">Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th>Cargo y Empresa</th>
+                            <th>Dirección</th>
+                            <th>Opciones</th>
+                        </tr>
+                        <tr>
+                          <td>
+                              <img src="../build/img/muestra_1.png" alt="Foto_Perfil">
+
+                          </td>
+                          <th>Andrés Hernández</th>                      
+                          <td>+52 5561231792</td>                      
+                          <td>andreshernandez85@aragon.unam.mx</td>                      
+                          <td>Estudiante ICO FES Aragón</td>
+                          <td>Ojo de Agua, Tecámac</td>
+                          <td>
+                              <a href="#" class="editar">Editar</a>
+                              <a href="#">Eliminar</a>
+                           </td>
+                        </tr>                                              
+                        <tr>
+                            <td>
+                                <img src="../build/img/muestra_2.png" alt="Foto_Perfil">
+                            </td>          
+                            <th>Carlos Cruz</th>                      
+                            <td>+52 9876543210</td>                      
+                            <td>carlosgusano@aragon.unam.mx</td>                      
+                            <td>Piloto Aviador</td>
+                            <td>Las américas, Ecatepec</td>
+                            <td>
+                                <a href="#" class="editar">Editar</a>
+                                <a href="#">Eliminar</a>
+                             </td>
+                          </tr>                                              
+                    </table>
+                </div> <!--Contactos-->     
+            </div>
+        </main>
+        
+        <footer class="seccion">
+            <div class="contenedor contenido-footer">
+            </div>
+            <p class="copyright">Todos los derechos reservados 2022 &copy;</p>
+        </footer>
+        <script src="../build/js/script.js"></script>
+    </body>
+</html>
