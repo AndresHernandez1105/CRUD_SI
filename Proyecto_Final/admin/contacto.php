@@ -15,13 +15,15 @@ $dir = '';
 $errores = [];
 $resultado = FALSE;
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $empresa = $_POST['empresa'];
-    $cargo = $_POST['cargo'];
-    $correo = $_POST['correo'];
-    $tel = $_POST['tel'];
-    $dir = $_POST['direccion'];
+    $nombre = mysqli_real_escape_string($db, $_POST['nombre']);
+    $apellido = mysqli_real_escape_string($db, $_POST['apellido']);
+    $empresa = mysqli_real_escape_string($db, $_POST['empresa']);
+    $cargo = mysqli_real_escape_string($db, $_POST['cargo']);
+    $correo = mysqli_real_escape_string($db, $_POST['correo']);
+    $tel = mysqli_real_escape_string($db, $_POST['tel']);
+    $dir = mysqli_real_escape_string($db, $_POST['direccion']);
+    $img = $_FILES['img'];
+    
 
     if(!$nombre){
         $errores[]= "Debes agregar un nombre";
@@ -51,8 +53,22 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $errores[]= "La dirección es obligatoria";
     }
 
+    if($img['size']>(2000*100)){
+        $errores[] = "La imágen debe ser menor a 200 Kb";
+    }
+
     if(empty($errores)){
-        $query =  "INSERT INTO contactos (nombre, apellido, empresa, cargo, correo, dir,tel) VALUES ('$nombre','$apellido','$empresa','$cargo','$correo','$dir',$tel);";
+
+        /** Subida de archivos*/
+        if(!$img['name']){
+            $nombre_img = NULL;
+        } else{
+            $carpeta_img = '../user/img/';
+            $nombre_img = md5(uniqid(rand(),true)) . ".jpg";
+            move_uploaded_file($img['tmp_name'],$carpeta_img . $nombre_img);
+        }
+        
+        $query =  "INSERT INTO contactos (nombre, apellido, empresa, cargo, correo, dir,tel,img) VALUES ('$nombre','$apellido','$empresa','$cargo','$correo','$dir',$tel,'$nombre_img');";
         $resultado = mysqli_query($db,$query);
         
         $nombre = '';
@@ -64,7 +80,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $dir = '';
 
         if($resultado){
-            header('Location: ../src/');
+            header('Location: ../admin/');
         }
     }
 }
@@ -84,13 +100,13 @@ incluirTemplate('header');
                     </div>
                     <?php endforeach; ?>
                     <h2>NUEVO CONTACTO</h2>
-                    <form action="contacto.php" class="formulario" method = "POST">
+                    <form action="contacto.php" class="formulario" method = "POST" enctype="multipart/form-data">
                         <div class="op">
                             <img src="../build/img/agregar_imagen.png" alt="Agregar imágen">
                         </div>
                         <fieldset>
                             <legend>Foto de contacto</legend>
-                            <input type="file" id="imagen" accept="image/jpg, image/png" name="img">
+                            <input type="file" id="img" accept="image/jpg, image/png" name="img">
                         </fieldset>
                         <fieldset>
                             <legend>Información Personal</legend>

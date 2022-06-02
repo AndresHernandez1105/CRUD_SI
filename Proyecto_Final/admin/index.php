@@ -33,7 +33,13 @@ incluirTemplate('header');
                         <?php while($row = mysqli_fetch_assoc($resultado)): ?>
                         <tr> 
                           <td>
-                              <img src="../build/img/muestra_1.png" alt="Foto_Perfil">
+                              <img src="<?php //Cargar la imágen
+                              if  ($row['img']==NULL){
+                                echo "../build/img/agregar_imagen.png";
+                              }else{
+                                echo "../user/img/".$row['img'];
+                              }
+                              ?>" alt="Foto_Perfil">
 
                           </td>
                           <th><?php echo $row['nombre']." ".$row['apellido'];?></th>  
