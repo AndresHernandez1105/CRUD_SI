@@ -1,27 +1,21 @@
-<?php include '../includes/templates/header.php'; ?>
+<?php 
+
+//Conectar a base de datos
+require '../includes/config/database.php';
+$db = conectarDB();
+
+//Consultar obtener datos
+$consulta = "SELECT * FROM contactos";
+$resultado = mysqli_query($db,$consulta);
+
+require '../includes/funciones.php';
+incluirTemplate('header');
+
+?>
 
         <main class="contenedor seccion">
             <div class="contenido-main">
-                <div class="navegacion">
-                    <a href="contacto.php" class="boton"><i class="fas fa-plus fa-lg"></i> <p>Crear Contacto</p></a>
-                    <div class="nav">
-                        <div class="actualizar">
-                            <span><i class="fa-solid fa-address-book"></i></span>                           
-                            <p>Contactos: 2</p>
-                        </div>
-                        <div class="actualizar">
-                            <span><i class="fa-solid fa-rotate-right"></i></span>
-                            <p>Actualizar</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="info">
-                        <p>Proyecto Sistemas de Información</p>
-                        <p>Grupo: 2859(2022-II)</p>
-                        <p>Equipo: Andrés Hernández, Carlos Gutiérrez</p>
-                    </div>
-                </div> <!--Navegación-->
-
+                <?php incluirTemplate('nav');?> 
                 <div class="contactos">
                     <h2>CONTACTOS</h2>
                     <table class="tabla">
@@ -34,45 +28,32 @@
                             <th>Dirección</th>
                             <th>Opciones</th>
                         </tr>
-                        <tr>
+
+                        <!-- Tabla de datos -->
+                        <?php while($row = mysqli_fetch_assoc($resultado)): ?>
+                        <tr> 
                           <td>
                               <img src="../build/img/muestra_1.png" alt="Foto_Perfil">
 
                           </td>
-                          <th>Andrés Hernández</th>                      
-                          <td>+52 5561231792</td>                      
-                          <td>andreshernandez85@aragon.unam.mx</td>                      
-                          <td>Estudiante ICO FES Aragón</td>
-                          <td>Ojo de Agua, Tecámac</td>
+                          <th><?php echo $row['nombre']." ".$row['apellido'];?></th>  
+                          <td><?php echo $row['tel'];?></td>                      
+                          <td><?php echo $row['correo'];?></td>                      
+                          <td><?php echo $row['cargo'].", ".$row['empresa'];?></td>
+                          <td><?php echo $row['dir'];?></td>
                           <td>
-                              <a href="#" class="editar">Editar</a>
-                              <a href="#">Eliminar</a>
+                              <span><i class="fa-solid fa-pen"></i></span>
+                              <span><i class="fa-solid fa-trash-can"></i></span>
                            </td>
                         </tr>                                              
-                        <tr>
-                            <td>
-                                <img src="../build/img/muestra_2.png" alt="Foto_Perfil">
-                            </td>          
-                            <th>Carlos Cruz</th>                      
-                            <td>+52 9876543210</td>                      
-                            <td>carlosgusano@aragon.unam.mx</td>                      
-                            <td>Piloto Aviador</td>
-                            <td>Las américas, Ecatepec</td>
-                            <td>
-                                <a href="#" class="editar">Editar</a>
-                                <a href="#">Eliminar</a>
-                             </td>
-                          </tr>                                              
+                        <?php endwhile; ?>
                     </table>
                 </div> <!--Contactos-->     
             </div>
         </main>
-        
-        <footer class="seccion">
-            <div class="contenedor contenido-footer">
-            </div>
-            <p class="copyright">Todos los derechos reservados 2022 &copy;</p>
-        </footer>
-        <script src="../build/js/script.js"></script>
-    </body>
-</html>
+
+<?php 
+
+incluirTemplate('footer');
+
+?>

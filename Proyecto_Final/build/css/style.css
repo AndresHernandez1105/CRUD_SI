@@ -71,7 +71,7 @@
     }
 }
 
-.header .logotipo a{
+.header a{
     color: var(--color_1);
     text-decoration: none;
     font-size: 1rem;
@@ -127,6 +127,19 @@
 .buscador input#Buscar:hover, .buscador input#Buscar:focus, .buscador input#Buscar:active{
     outline:none;
   }
+
+.header .redes-sociales a:hover{
+    color: azure;
+}
+
+.header .redes-sociales a{
+    font-size: 1.5rem;
+}
+
+
+.header .redes-sociales a p{
+    padding: 0 0 0 5px;
+}
 
 /*Main*/
 .contenido-main{
@@ -189,6 +202,7 @@
 .contactos h2{
     text-align: center;
 }
+
 
 /*Formulario*/
 
@@ -254,6 +268,14 @@
     margin: 0;
 }
 
+.alerta-error {
+    background-color: var(--color_fondo);
+    color: var(--color_1);
+    padding: 10px;
+    text-align: center;
+    width: 80%;
+    margin: 2px;
+}
 
 /*Footer*/
 footer {

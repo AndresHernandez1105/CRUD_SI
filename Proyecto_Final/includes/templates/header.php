@@ -26,6 +26,9 @@
                             <span class="icon"><i class="fas fa-times"></i></span>
                         </div>
                     </div>
+                    <div class="redes-sociales"> 
+                        <a href="https://github.com/AndresHernandez1105/CRUD_SI/tree/main"><span><i class="fa-brands fa-github"></i></span><p>Repositorio</p></a>
+                    </div>
                 </div> <!-- Barra-->
             </div> <!--Contenido-->
         </header>
