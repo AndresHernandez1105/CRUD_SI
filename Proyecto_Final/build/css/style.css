@@ -168,10 +168,12 @@
     padding: 10px 0 0 0;
 }
 
-.navegacion .actualizar{
+.navegacion .actualizar, .navegacion .actualizar a{
+    color: var(--color_fondo);
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-decoration: none;
 }
 
 .navegacion .actualizar p{
@@ -198,6 +200,11 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
+}
+
+.contactos .tabla .opciones a{
+    color: var(--color_fondo);
+    padding: 5px;
 }
 
 .contactos h2{
@@ -249,6 +256,7 @@
 .contactos .formulario .op img{
     width: 156px;
     height: 156px;
+    border-radius: 50%;
 }
 
 .formulario_boton {

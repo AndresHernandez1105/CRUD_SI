@@ -3,11 +3,24 @@
                     <div class="nav">
                         <div class="actualizar">
                             <span><i class="fa-solid fa-address-book"></i></span>                           
-                            <p>Contactos: 2</p>
+                            <p>Contactos: 
+                            <?php 
+                            $db = conectarDB();
+                            $query = "SELECT count(*) from contactos";
+                            $resultado = mysqli_query($db,$query);
+
+                            $row = mysqli_fetch_assoc($resultado);
+                            $cantidad = $row['count(*)'];
+
+                            echo $cantidad;
+                            ?>
+                            </p>
                         </div>
                         <div class="actualizar">
-                            <span><i class="fa-solid fa-rotate-right"></i></span>
-                            <p>Actualizar</p>
+                            <a href="../admin/index.php">
+                                <span><i class="fa-solid fa-rotate-right"></i></span>
+                                <p>Actualizar</p>
+                            </a>
                         </div>
                     </div>
                     <hr>

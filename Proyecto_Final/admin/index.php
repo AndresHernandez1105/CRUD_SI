@@ -5,7 +5,7 @@ require '../includes/config/database.php';
 $db = conectarDB();
 
 //Consultar obtener datos
-$consulta = "SELECT * FROM contactos";
+$consulta = "SELECT * FROM contactos order by nombre;";
 $resultado = mysqli_query($db,$consulta);
 
 require '../includes/funciones.php';
@@ -48,8 +48,14 @@ incluirTemplate('header');
                           <td><?php echo $row['cargo'].", ".$row['empresa'];?></td>
                           <td><?php echo $row['dir'];?></td>
                           <td>
-                              <span><i class="fa-solid fa-pen"></i></span>
-                              <span><i class="fa-solid fa-trash-can"></i></span>
+                              <div class="opciones">
+                                <a href="editar.php?id=<?php echo$row['id'] ?>">
+                                    <span><i class="fa-solid fa-pen"></i></span>
+                                </a>
+                                <a href="eliminar.php?id=<?php echo$row['id'] ?>">
+                                    <span><i class="fa-solid fa-trash-can"></i></span>
+                                </a>
+                              </div>
                            </td>
                         </tr>                                              
                         <?php endwhile; ?>
