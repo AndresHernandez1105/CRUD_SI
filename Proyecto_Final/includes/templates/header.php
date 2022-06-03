@@ -20,11 +20,13 @@
                         </a>
                     </div>
                     <div class="buscador">
-                        <div class="buscador-box">
-                            <span class="icon"><i class="fa fa-search fa-lg"></i></span>
-                            <input type="Buscar" placeholder="Buscar..." id="Buscar">
-                            <span class="icon"><i class="fas fa-times"></i></span>
-                        </div>
+                        <form action="buscar.php" method = "get">
+                            <div class="buscador-box">
+                                <span class="icon"><i class="fa-solid fa-angles-right"></i></span>
+                                <input type="Buscar" placeholder="Buscar..." id="Buscar" name="buscar">
+                                <button type="submit" class ="icon"><span><i class="fa fa-search fa-lg"></i></span></button>
+                            </div>
+                        </form>
                     </div>
                     <div class="redes-sociales"> 
                         <a href="https://github.com/AndresHernandez1105/CRUD_SI/tree/main"><span><i class="fa-brands fa-github"></i></span><p>Repositorio</p></a>

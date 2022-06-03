@@ -68,8 +68,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $errores[]= "La dirección es obligatoria";
     }
 
-    if($img['size']>(2000*100)){
-        $errores[] = "La imágen debe ser menor a 200 Kb";
+    if($img['size']>(10000*100)){
+        $errores[] = "La imágen debe ser menor a 1 MB";
     }
 
     if(empty($errores)){

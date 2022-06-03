@@ -117,6 +117,10 @@
 }
 
 .buscador .icon{
+    background-color: var(--color_1);
+    border: none;
+    text-align: center;
+    text-decoration: none;
     color: var(--color_fondo);
     height: 40px;
     padding: 0 10px;

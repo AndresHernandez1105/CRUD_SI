@@ -5,6 +5,11 @@ require '../includes/config/database.php';
 $db = conectarDB();
 
 $id = $_GET['id'];
+if(!$id){
+    header('Location: ../admin/');
+    exit();
+}
+
 $sql = "DELETE FROM contactos WHERE id = $id";
 $resultado = mysqli_query($db,$sql);
 
